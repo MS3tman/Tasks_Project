@@ -40,3 +40,5 @@ route::get('tasks.create',[TaskController::class, 'create'])->name('tasks22.crea
 route::get('edit/{id}',[TaskController::class,'edit'])->name('to_edit');
 
 route::post('update/{id}',[TaskController::class,'update'])->name('to_update');
+
+route::get('delete/{id}',[TaskController::class, 'destroy'])->name('to_delete');

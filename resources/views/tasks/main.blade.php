@@ -33,10 +33,11 @@
             </button>
             </form>
           </td>
-
-
           <td>
-            <button class="btn btn-primary" type="submit">Delete</button>
+            <form action="{{ route('to_delete', [$task->id]) }}" method="get">
+              @csrf <!-- Add CSRF token for Laravel forms -->
+              <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
           </td>
         </tr>
         @endforeach

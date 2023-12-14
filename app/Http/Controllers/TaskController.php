@@ -77,9 +77,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $old_task = Task::find($id);
-        $old_task->name = $request->name;
-        $old_task->description = $request->description;
+        $old_task = Task::find($id);       // old_task pointer to the specific row depend on $id 
+        $old_task->name = $request->name;  // to do overwrite name , to replace the old name to new name.
+        $old_task->description = $request->description; // to do overwrite description , to replace the old description to new description
         $old_task->save();
        
         return redirect()->route('tasks.main');
@@ -91,6 +91,7 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Task::destroy($id);
+        return redirect()->route('tasks.main');
     }
 }
