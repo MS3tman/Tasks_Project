@@ -12,7 +12,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container" style="margin-top:50px">
+    <div class="container" style="margin-top:100px">
       @if ($errors->any())
       <div class="alert alert-danger">
           <ul>

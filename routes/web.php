@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
@@ -37,3 +36,7 @@ route::get('tasks.main',[TaskController::class, 'index'])->name('tasks.main');
 //route::view('create','tasks.create')->name('create');
 
 route::get('tasks.create',[TaskController::class, 'create'])->name('tasks22.create');
+
+route::get('edit/{id}',[TaskController::class,'edit'])->name('to_edit');
+
+route::post('update/{id}',[TaskController::class,'update'])->name('to_update');
